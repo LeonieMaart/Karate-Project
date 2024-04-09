@@ -17,7 +17,7 @@ class VoteTest {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:DOGs/votes")
+        Results results = Runner.path("classpath:DOGs/votes/CreateVote.feature")
                 .outputCucumberJson(true)
                 .parallel(5);
         generateReport(results.getReportDir());
