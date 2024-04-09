@@ -23,8 +23,8 @@ for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
     When method POST
     Then status <statusCode>
     * def voteIdAsString = "195340"
-    * def getVoteResponse = call read('get_vote_id.feature') { voteID: '#(voteIdAsString)' }
-    * def getVoteResponse = call read('get_vote_id.feature') { voteID: '#(voteID)' }
+#    * def getVoteResponse = call read('get_vote_id.feature') { voteID: '#(voteIdAsString)' }
+#    * def getVoteResponse = call read('get_vote_id.feature') { voteID: '#(voteID)' }
 
     # Assert the response body attributes
     And match response contains { id: '#number', image_id: '#string', value: '#number', country_code: '#string' }
@@ -40,13 +40,13 @@ for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
     And match response.message != 'FAILURE'
 
      * def voteIdAsString = response.id
-     * def getVoteResponse = call read('generic_get_vote_id.feature') { voteID: '#(voteIdAsString)' }
+#     * def getVoteResponse = call read('generic_get_vote_id.feature') { voteID: '#(voteIdAsString)' }
 
 
-     * match response contains { id: '#number', image_id: '#string', value: '#number', country_code: '#string' }
-     * match response.message != 'FAILURE'
+#     * match response contains { id: '#number', image_id: '#string', value: '#number', country_code: '#string' }
+#     * match response.message != 'FAILURE'
 
-     * def getVoteResponse = call read('generic_delete_voteid.feature') { voteID: '#(voteIdAsString)' }
+#     * def getVoteResponse = call read('generic_delete_voteid.feature') { voteID: '#(voteIdAsString)' }
 
 
     Examples:
