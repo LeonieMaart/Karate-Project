@@ -31,12 +31,12 @@ jobs:
         cache: maven
  
     - name: Clean
-      run: mvn clean --file simpletool-karate/pom.xml
+      run: mvn clean --file pom.xml
 
     - name: Compile
-      run: mvn compile --file simpletool-karate/pom.xml
+      run: mvn compile --file pom.xml
  
     - name: Run Tests
-      run: mvn test --file simpletool-karate/pom.xml -Dtest=VoteTest,VoteTest
+      run: mvn test --file pom.xml -Dtest=VoteTest,VoteTest
       if: (github.ref == 'refs/heads/leo' && github.event_name == 'push') || (github.ref == 'refs/heads/master' && github.event_name == 'push')
 
