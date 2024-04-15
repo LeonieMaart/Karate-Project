@@ -29,7 +29,7 @@ jobs:
         cache: maven
 
     - name: Clean
-      run: mvn clean --file simpletool-karate/pom.xm
+      run: mvn clean --file simpletool-karate/pom.xml
 
     - name: Compile
       run: mvn compile --file simpletool-karate/pom.xml
