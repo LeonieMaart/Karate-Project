@@ -12,11 +12,7 @@ on:
     branches: 
       - leo
       - master
-on:
-  push:
-    branches: [ "leo" ]
-  pull_request:
-    branches: [ "leo" ]
+
 
 jobs:
   build:
