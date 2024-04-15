@@ -28,13 +28,13 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-	- name: Clean
+    - name: Clean
       run: mvn clean --file simpletool-karate/pom.xm
 
-	- name: Compile
+    - name: Compile
       run: mvn compile --file simpletool-karate/pom.xml
 
-	- name: Build with Maven
+    - name: Build with Maven
       run: mvn clean test --file pom.xml -Dtest=VoteTest,VoteTest 
       if: (github.ref == 'refs/heads/leo' && github.event_name == 'push') || (github.ref == 'refs/heads/master' && github.event_name == 'push')
     
