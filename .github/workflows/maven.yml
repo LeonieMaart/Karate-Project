@@ -7,7 +7,11 @@
 # documentation.
 
 name: Java CI with Maven
-
+on:
+  push:
+    branches: 
+      - leo
+      - master
 on:
   push:
     branches: [ "leo" ]
@@ -27,8 +31,17 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn clean test --file pom.xml -Dtest=VoteTest,VoteTest 
-       #omment
+
+    - name: Clean
+      run: mvn clean --file simpletool-karate/pom.xml
+ 
+    - name: Compile
+      run: mvn compile --file simpletool-karate/pom.xml
+ 
+    - name: Run Tests
+      run: mvn test --file simpletool-karate/pom.xml -Dtest=VoteTest
+      if: (github.ref == 'refs/heads/leo' && github.event_name == 'push') || (github.ref == 'refs/heads/master' && github.event_name == 'push')
+
+
 
    
